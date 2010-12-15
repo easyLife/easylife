@@ -28,10 +28,11 @@ name=Google testing - i386
 baseurl=http://dl.google.com/linux/rpm/testing/i386
 enabled=0
 gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 
 [google64]
-name=Google - x86_64
-baseurl=http://dl.google.com/linux/rpm/stable/x86_64
+name=Google – \$basearch
+baseurl=http://dl.google.com/linux/rpm/stable/\$basearch
 enabled=1
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
@@ -52,6 +53,7 @@ name=Google Testing - i386
 baseurl=http://dl.google.com/linux/rpm/testing/i386
 enabled=0
 gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
 
 	fi
