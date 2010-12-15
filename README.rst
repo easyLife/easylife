@@ -15,3 +15,6 @@ of easyLife features:
 + Integrates Sun Java with system-switch-java;
 + Installs Google apps (Picasa, Desktop);
 + And many others...
+
+Author: Luis Felipe aka "duli"
+Website: http://www.easylifeproject.org/
