@@ -1,0 +1,114 @@
+#!/bin/bash
+
+#    easyLife - Automated software install and configuration for Fedora.
+#    Copyright (C) 2010  Luís Felipe B. Marzagão (duli)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Define some variables
+VERSION="2.3"
+LOGFILE="/var/log/easylife.log"
+
+
+echo -e "\neasyLife  Copyright (C) 2007-2010  Luis Felipe B. Marzagao (duli)"
+echo -e "Version: $VERSION"
+echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
+echo -e "This is free software, and you are welcome to redistribute it"
+echo -e "under certain conditions; read the file LICENSE for details.\n"
+
+
+# Discover easylife installation folder
+export RUNDIR=$(dirname "$0")
+
+
+# Change to installation folder in order to correctly source files
+cd "$RUNDIR"
+
+
+# Discover local language and source the respective lang file if present
+EL_LANG="${LANG%%.*}"
+EL_LANG="${EL_LANG:-en_US}"
+[[ -f lang/"${EL_LANG}.sh" ]] && source lang/"${EL_LANG}.sh" ||	source lang/en_US.sh
+
+
+# Source all scripts, functions etc.
+for src in lib/common/*.sh; do source "$src"; done
+
+for src in lib/*.sh; do source "$src"; done
+
+
+# Make sure zenity is installed (not really necessary if zenity is listed at SPEC file as required)
+ZenityOn || Terminate
+
+
+# Change zenity's default behavior on focus_on_map property, so dialog boxes appear in the front
+# https://bugzilla.redhat.com/show_bug.cgi?id=479394
+sed -i '/<property name="focus_on_map">False</s/False/True/' /usr/share/zenity/zenity.ui
+
+
+# Show notification icon
+zenity --notification --window-icon="/usr/share/pixmaps/easylife.png" --text "$COMMON_MSG_ELNOTFICATION" &
+
+
+# Kill previous yum still running
+pkill -SIGKILL -u root -o yum
+
+
+# Run required verifications
+IsRoot || Terminate
+
+RefreshPackagekitOff || Terminate
+
+WhichUser || Terminate
+
+RpmfusionOn || Terminate
+
+FreshrpmsOff
+
+AtrpmsOn
+
+pkill -SIGKILL -u root -o yum
+
+
+# Get setup/install options 
+GetOpt
+
+
+# Populate an array with selected functions from GetOpt (PS: substituting "|" with " ")
+FUNCTIONS=(${SELECTION//|/ })
+
+
+# Exit if no selection is made
+[[ -z "${FUNCTIONS[*]}" ]] && Terminate
+
+
+# Cleanning yum headers and stuff seems to prevent download erros
+# yum clean headers metadata dbcache
+
+
+# Get download urls or exit
+GetDlUrls || Terminate
+
+
+# Run selected functions and log them to a logfile
+# TODO: Implement "logger -p local0.info -f $LOGFILE -t info "Msg here..."
+for GO in ${FUNCTIONS[@]}; do
+	#echo -e "\n$(date +%c) - easyLife version: $VERSION\n" | tee -a "$LOGFILE"
+	#"$GO" | tee -a "$LOGFILE"
+	"$GO"
+done
+
+
+# End program
+Terminate
