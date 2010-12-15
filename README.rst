@@ -17,4 +17,5 @@ of easyLife features:
 + And many others...
 
 Author: Luis Felipe aka "duli"
+
 Website: http://www.easylifeproject.org/
