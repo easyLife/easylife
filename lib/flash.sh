@@ -53,7 +53,12 @@ Flash() {
 
 			chown root:root /usr/lib64/mozilla/plugins/libflashplayer.so
 			chmod 755 /usr/lib64/mozilla/plugins/libflashplayer.so
-			restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
+			
+			if [[ -f /selinux/enforce ]]; then
+			
+			    restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
+			    
+			 fi
 			
 			OkMsg "Flash plugin installed, RESTART Firefox"
 
