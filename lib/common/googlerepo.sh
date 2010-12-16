@@ -65,20 +65,4 @@ EOF
 		return 1
 
 	fi
-
-	cd ~
-	rm -rf linux_signing_key.pub
-	wget https://dl-ssl.google.com/linux/linux_signing_key.pub
-	if [[ "$?" != 0 ]]; then
-
-		ErrMsg "Could not download google repo signing key file"
-		return 1
-
-	fi
-
-	rpm --import linux_signing_key.pub
-	rm -rf linux_signing_key.pub
-
-	[[ "$?" == 0 ]] && return 0
-
 }
