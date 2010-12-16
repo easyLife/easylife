@@ -47,11 +47,14 @@ Flash() {
 		Download name "$FLASHPKG"
 
 		mkdir -p /usr/lib64/mozilla/plugins
-		tar zxf "$FLASHPKG" --directory=/usr/lib64/mozilla/plugins
+		tar -zxf "$FLASHPKG" --directory=/usr/lib64/mozilla/plugins
 
 		if [[ "$?" == 0 ]]; then
 
 			chown root:root /usr/lib64/mozilla/plugins/libflashplayer.so
+			chmod 755 /usr/lib64/mozilla/plugins/libflashplayer.so
+			restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
+			
 			OkMsg "Flash plugin installed, RESTART Firefox"
 
 		else
