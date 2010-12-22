@@ -1,3 +1,4 @@
+# 0AD - Game - http://wildfiregames.com/0ad/
 0ad() {
 
     echo "[$FUNCNAME]"
@@ -27,6 +28,7 @@ EOF
     yum install -y mesa-libGLw mesa-libGL mesa-libGLw-devel mesa-libGL-devel @fedora-packager
 
     # Check if the render acceleration library libtxc_dxtn is installed
+    # http://wildfiregames.com/users/code/libtxc_dxtn070518.tar.gz
     if [[ ! -f /usr/lib/libtxc_dxtn.so ]]; then
         LIBTXCPKG='libtxc_dxtn070518.tar.gz'
         cd /usr/local/src
