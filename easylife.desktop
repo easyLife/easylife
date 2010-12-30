@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=easyLife
+GenericName=easyLife
+Comment=Automated configurations
+Categories=System;X-Red-Hat-Base;X-Fedora;
+Exec=/usr/local/bin/easylife
+Terminal=true
+Type=Application
+Icon=/usr/share/pixmaps/easylife.png
+StartupNotify=true
+X-Desktop-File-Install-Version=0.12
