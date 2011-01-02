@@ -58,7 +58,7 @@ Flash() {
 			
 			    restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
 			    
-			 fi
+			fi
 			
 			OkMsg "Flash plugin installed, RESTART Firefox"
 
@@ -78,4 +78,3 @@ Flash() {
 	mozilla-plugin-config -i -g > /dev/null
 
 }
-

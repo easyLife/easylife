@@ -33,7 +33,7 @@ gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 [google64]
 name=Google – \$basearch
 baseurl=http://dl.google.com/linux/rpm/stable/\$basearch
-enabled=1
+enabled=0
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
