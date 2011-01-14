@@ -1,5 +1,5 @@
 # 0AD - Game - http://wildfiregames.com/0ad/
-0ad() {
+0AD() {
 
     echo "[$FUNCNAME]"
 
@@ -10,7 +10,7 @@ cat << EOF > /etc/yum.repos.d/fedora-0ad.repo
 [fedora-0ad]
 name=Cross-Platform RTS Game of Ancient Warfare
 baseurl=http://repos.fedorapeople.org/repos/bioinfornatics/0ad/fedora-\$releasever/\$basearch/
-enabled=1
+enabled=0
 skip_if_unavailable=1
 gpgcheck=0
 
@@ -43,5 +43,5 @@ EOF
     fi
 
     # Install 0ad
-    yum install -y 0ad
+    yum install -y --enablerepo=fedora-0ad 0ad
 }
