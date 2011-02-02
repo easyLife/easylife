@@ -2,11 +2,11 @@ Fonts() {
 
 	echo "[$FUNCNAME]"
 
-	yum install -y aajohan-* adf-* aldusleaf-* allgeyer-* apa-new-* apanov-* artwiz-* beteckna-* \
-		       bitstream-* bpg-* dejavu-* dustin-* ecolier-* gargi-* gdouros-*               \
-		       gfs-* gnu-free-* google-droid-* hartke-aurulent-* mgopen-* mona-* oflb-*      \
-		       yanone-* ghostscript-fonts xorg-x11-fonts* liberation-* wget
-
+	yum install -y wget aajohan-*fonts adf-*fonts aldusleaf-*fonts allgeyer-*fonts apa-new-*fonts apanov-*fonts  		\
+		       artwiz-*fonts beteckna-*fonts bitstream-*fonts bpg-*fonts dejavu-*fonts dustin-*fonts ecolier-*fonts	\ 
+		       gargi-*fonts gdouros-*fonts gfs-*fonts gnu-free-*fonts google-droid-*fonts hartke-aurulent-*fonts	\
+		       mgopen-*fonts mona-*fonts oflb-*fonts yanone-*fonts ghostscript-fonts xorg-x11-fonts* liberation-*fonts
+		       
 	rpm -q chkfontpath
 	if [[ "$?" == 0 ]] ; then
 
