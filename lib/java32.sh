@@ -2,12 +2,12 @@ Java32() {
 
 	echo "[$FUNCNAME]"
 
-	JAVAPACKAGE=jre-6u21-linux-i586.bin
-	JAVALINKNAME=jre-1.6.0u21-sun-i586
+	JAVAPACKAGE=jre-6u25-linux-i586.bin
+	JAVALINKNAME=jre-1.6.0u25-sun-i586
 	JAVAPLUGINNAME=libjavaplugin.so
-	JAVAUNPACKEDNAME=jre1.6.0_21
+	JAVAUNPACKEDNAME=jre1.6.0_25
 
-	JAVAINSTALLFOLDER=/opt/jre1.6.0_21_i586
+	JAVAINSTALLFOLDER=/opt/jre1.6.0_25_i586
 	
 	PRIORITY=18000
 	IsX86_64 && PRIORITY=17000
@@ -60,8 +60,8 @@ Java32() {
 	# if [[ -f /selinux/enforce ]] && chcon -t unconfined_execmem_exec_t "$JAVAINSTALLFOLDER"/bin/java
 
 	# Remove previous alternative
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u19-sun-i586/bin/java &> /dev/null
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u20-sun-i586/bin/java &> /dev/null
+	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u24-sun-i586/bin/java &> /dev/null
+	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u23-sun-i586/bin/java &> /dev/null
 
 		  
 	# Install Sun Java as an alternative and set it with the higest priority

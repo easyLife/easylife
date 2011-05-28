@@ -10,9 +10,9 @@ MediaPlayers() {
 	# Remove defective thumbnails formed before media support was installed
 	rm -rf "~$USERNAME/.thumbnails/*"
 
-	# Temp fix (--skip-broken) due to dependency problems. Remove it when solved.
-	yum install -y	mplayer mplayer-gui kplayer vlc avidemux-* banshee amarok				\
-		       	xmms xmms-mp3 xmms-crossfade xmms-faad2 xmms-flac xmms-pulse audio-convert-mod	--skip-broken
+	yum install -y  mplayer mplayer-gui kplayer vlc avidemux-* banshee amarok	\
+		       	xmms xmms-mp3 xmms-crossfade xmms-faad2 xmms-flac		\
+			xmms-pulse audio-convert-mod
 		       	
 		       
 	[[ "$?" != 0 ]] && ErrMsg "Could not install packages" && return 1

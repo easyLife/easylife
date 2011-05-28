@@ -3,11 +3,11 @@ Utils() {
 	echo "[$FUNCNAME]"
 
 	yum install -y nautilus-open-terminal system-config-boot system-config-language		\
-		       gconf-editor cups-pdf p7zip p7zip-plugins				\
+		       dconf-editor cups-pdf p7zip p7zip-plugins				\
 		       unrar isomaster yumex xchm lshw lshw-gui					\
-		       yum-presto yum-fastestmirror system-config-display
+		       yum-presto yum-fastestmirror
 	
-	if [[ $? != 0 ]]; then
+	if [[ "$?" != 0 ]]; then
 
 		ErrMsg "Could not install packages"
 		return 1

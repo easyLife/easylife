@@ -6,16 +6,16 @@ AdobeReader() {
 	unset ADOBEPKG
 
 	# Select correct package name for download
-	[[ "$EL_LANG" = "pt_BR" ]] && ADOBEPKG="AdobeReader_ptb-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "pt_PT" ]] && ADOBEPKG="AdobeReader_ptb-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "en_US" ]] && ADOBEPKG="AdobeReader_enu-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "es_ES" ]] && ADOBEPKG="AdobeReader_esp-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "nl_NL" ]] && ADOBEPKG="AdobeReader_nld-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "de_DE" ]] && ADOBEPKG="AdobeReader_deu-8.1.2-1.i486.rpm"
-	[[ "$EL_LANG" = "it_IT" ]] && ADOBEPKG="AdobeReader_ita-8.1.2-1.i486.rpm"
+	[[ "$EL_LANG" == "en_US" ]] && ADOBEPKG="AdbeRdr9.4.2-1_i486linux_enu.rpm"
+	[[ "$EL_LANG" == "pt_BR" ]] && ADOBEPKG="AdobeReader_ptb-8.1.7-1.i486.rpm"
+	[[ "$EL_LANG" == "pt_PT" ]] && ADOBEPKG="AdobeReader_ptb-8.1.7-1.i486.rpm"
+	[[ "$EL_LANG" == "es_ES" ]] && ADOBEPKG="AdobeReader_esp-8.1.7-1.i486.rpm"
+	[[ "$EL_LANG" == "nl_NL" ]] && ADOBEPKG="AdobeReader_nld-8.1.7-1.i486.rpm"
+	[[ "$EL_LANG" == "de_DE" ]] && ADOBEPKG="AdobeReader_deu-8.1.7-1.i486.rpm"
+	[[ "$EL_LANG" == "it_IT" ]] && ADOBEPKG="AdobeReader_ita-8.1.7-1.i486.rpm"
 
 	# For any other languages (if ADOBEPKG is empty), set enu package as the default
-	ADOBEPKG="${ADOBEPKG:-AdobeReader_enu-8.1.2-1.i486.rpm}"
+	ADOBEPKG="${ADOBEPKG:-AdbeRdr9.4.2-1_i486linux_enu.rpm}"
 
 
 	rpm -q "${ADOBEPKG%%-*}"

@@ -1,5 +1,7 @@
 RpmfusionOn() {
 
+	echo "[$FUNCNAME]"
+
 	rpm -q wget > /dev/null
 	if [[ "$?" != 0 ]]; then
 		
@@ -22,8 +24,8 @@ RpmfusionOn() {
 	for i in 'free' 'nonfree'; do
 	
 		# Download stable or rawhide?
-		VERSION='stable'
-		#VERSION='rawhide'
+		#VERSION='stable'
+		VERSION='rawhide'
 
 		rpm -q rpmfusion-"$i"-release > /dev/null
 		if [[ "$?" != 0 ]]; then
@@ -37,6 +39,11 @@ RpmfusionOn() {
 				return 1
 
 			fi
+		
+		else
+	
+			OkMsg "RPM Fusion $i already installed"
+			return 0
 
 		fi
 

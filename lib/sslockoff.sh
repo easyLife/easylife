@@ -5,8 +5,10 @@ SsLockOff() {
 	IsGnome
 	[[ "$?" != 0 ]] && ErrMsg "Not Gnome running" && return 1
 
+	#sudo -u "$USERNAME" "$DSBA" gconftool-2 -s -t bool /apps/gnome-screensaver/lock_enabled false
 
-	sudo -u "$USERNAME" "$DSBA" gconftool-2 -s -t bool /apps/gnome-screensaver/lock_enabled false
+	sudo -u "$USERNAME" gsettings set \
+		org.gnome.desktop.screensaver lock-enabled false
 
 	if [[ "$?" != 0 ]]; then
 
@@ -15,7 +17,7 @@ SsLockOff() {
 
 	elif [[ "$?" = 0 ]]; then
 
-		OkMsg "Lock_enabled set"
+		OkMsg "Lock-enabled set"
 		return 0
 	
 	fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #    easyLife - Automated software install and configuration for Fedora.
-#    Copyright (C) 2010  Luís Felipe B. Marzagão (duli)
+#    Copyright (C) 2011  Luis Felipe B. Marzagão (duli)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,11 +17,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="2.3"
+VERSION="3.0"
 LOGFILE="/var/log/easylife.log"
 
 
-echo -e "\neasyLife  Copyright (C) 2007-2010  Luis Felipe B. Marzagao (duli)"
+echo -e "\neasyLife  Copyright (C) 2007-2011  Luis Felipe B. Marzagao (duli)"
 echo -e "Version: $VERSION"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
 echo -e "This is free software, and you are welcome to redistribute it"
@@ -48,17 +48,15 @@ for src in lib/common/*.sh; do source "$src"; done
 for src in lib/*.sh; do source "$src"; done
 
 
-# Make sure zenity is installed (not really necessary if zenity is listed at SPEC file as required)
-ZenityOn || Terminate
+# Make sure zenity is installed (not really necessary if zenity is listed as required at SPEC file)
+#ZenityOn || Terminate
 
 
 # Change zenity's default behavior on focus_on_map property, so dialog boxes appear in the front
 # https://bugzilla.redhat.com/show_bug.cgi?id=479394
-sed -i '/<property name="focus_on_map">False</s/False/True/' /usr/share/zenity/zenity.ui
+#sed -i '/<property name="focus_on_map">False</s/False/True/' /usr/share/zenity/zenity.ui
 
 
-# Show notification icon
-zenity --notification --window-icon="/usr/share/pixmaps/easylife.png" --text "$COMMON_MSG_ELNOTFICATION" &
 
 
 # Kill previous yum still running
@@ -72,11 +70,14 @@ RefreshPackagekitOff || Terminate
 
 WhichUser || Terminate
 
+# Show notification icon - after WhichUser because then we will have $USERNAME
+#sudo -u "$USERNAME" zenity --notification --window-icon="/usr/share/pixmaps/easylife.png" --text "$COMMON_MSG_ELNOTFICATION" &
+
 RpmfusionOn || Terminate
 
 FreshrpmsOff
 
-AtrpmsOn
+AtrpmsInstall
 
 pkill -SIGKILL -u root -o yum
 

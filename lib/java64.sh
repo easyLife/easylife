@@ -5,12 +5,12 @@ Java64() {
 	IsX86_64
 	[[ "$?" != 0 ]] && ErrMsg "Not a x86_64 Operating System" && return 1
 
-	JAVAPACKAGE=jre-6u21-linux-x64.bin
-	JAVALINKNAME=jre-1.6.0u21-sun-x64
+	JAVAPACKAGE=jre-6u25-linux-x64.bin
+	JAVALINKNAME=jre-1.6.0u25-sun-x64
 	JAVAPLUGINNAME=libjavaplugin.so.x86_64
-	JAVAUNPACKEDNAME=jre1.6.0_21
+	JAVAUNPACKEDNAME=jre1.6.0_25
 
-	JAVAINSTALLFOLDER=/opt/jre1.6.0_21_x64
+	JAVAINSTALLFOLDER=/opt/jre1.6.0_25_x64
 
 	PRIORITY=17000
 	IsX86_64 && PRIORITY=18000
@@ -63,8 +63,8 @@ Java64() {
 	# if [[ -f /selinux/enforce ]] && chcon -t unconfined_execmem_exec_t "$JAVAINSTALLFOLDER"/bin/java
 	
 	# Remove previous alternative
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u19-sun-x64/bin/java &> /dev/null
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u20-sun-x64/bin/java &> /dev/null
+	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u24-sun-x64/bin/java &> /dev/null
+	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u23-sun-x64/bin/java &> /dev/null
 		  
 	# Install Sun Java as an alternative and set it with the higest priority
 	/usr/sbin/alternatives --install \
@@ -94,8 +94,6 @@ Java64() {
 			/etc/alternatives/"$JAVAPLUGINNAME" /usr/lib64/mozilla/plugins/libjavaplugin.so
 
 	fi
-
-
 
 	mozilla-plugin-config -i -g > /dev/null
 

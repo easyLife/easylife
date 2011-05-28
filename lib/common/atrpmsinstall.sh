@@ -1,9 +1,11 @@
-AtrpmsOn() {
+AtrpmsInstall() {
+
+	echo "[$FUNCNAME]"
 
 	if [[ -f /etc/yum.repos.d/atrpms.repo ]]; then
 
 		sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/atrpms.repo
-		OkMsg "ATrpms repo already installed"
+		OkMsg "ATrpms repo installed and disabled"
 		return 0
 
 	fi

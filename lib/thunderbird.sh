@@ -6,8 +6,10 @@ Thunderbird() {
 
 	if [[ "$?" == 0 ]]; then
 
-		sudo -u "$USERNAME" "$DSBA" gconftool-2 --type string \
-			--set /desktop/gnome/url-handlers/mailto/command "thunderbird %s"
+		# Did not find any gsettings correspondent schema
+		#sudo -u "$USERNAME" "$DSBA" gconftool-2 --type string \
+		#	--set /desktop/gnome/url-handlers/mailto/command "thunderbird %s"
+		echo
 
 	else
 

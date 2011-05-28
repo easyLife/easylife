@@ -19,25 +19,32 @@ GetOpt() {
         FALSE   DvdTools        "$GETOPT_MSG_DVDTOOLS"                  \
         FALSE   Flash           "$GETOPT_MSG_FLASH"                     \
         FALSE   Fonts           "$GETOPT_MSG_FONTS"                     \
-        FALSE   GoogleApps      "$GETOPT_MSG_GOOGLEAPPS"                \
         FALSE   Java32          "$GETOPT_MSG_JAVA32"                    \
         FALSE   Java64          "$GETOPT_MSG_JAVA64"                    \
         FALSE   K3b             "$GETOPT_MSG_K3B"                       \
         FALSE   MediaPlayers    "$GETOPT_MSG_MEDIAPLAYERS"              \
         FALSE   NiceMenus       "$GETOPT_MSG_NICEMENUS"                 \
-        FALSE   Nvidia173xx     "$GETOPT_MSG_NVIDIA173xx"               \
         FALSE   Nvidia          "$GETOPT_MSG_NVIDIA"                    \
-        FALSE   ResizeFonts     "$GETOPT_MSG_RESIZEFONTS"               \
+        FALSE   Nvidia173xx     "$GETOPT_MSG_NVIDIA173xx"               \
         FALSE   SelinuxOff      "$GETOPT_MSG_SELINUXOFF"                \
         FALSE   SetupKeyboard   "$GETOPT_MSG_SETUPKEYBOARD"             \
         FALSE   SetupWindows    "$GETOPT_MSG_SETUPWINDOWS"              \
         FALSE   Skype           "$GETOPT_MSG_SKYPE"                     \
         FALSE   SsLockOff       "$GETOPT_MSG_SSLOCKOFF"                 \
         FALSE   SudoSetup       "$GETOPT_MSG_SUDOSETUP"                 \
-        FALSE   Theme           "$GETOPT_MSG_THEME"                     \
         FALSE   Thunderbird     "$GETOPT_MSG_THUNDERBIRD"               \
         FALSE   Utils           "$GETOPT_MSG_UTILS"                     \
         2> /dev/null)
+
+
+	##removed - Google now provides rpms directly with specific repos
+        #FALSE   GoogleApps      "$GETOPT_MSG_GOOGLEAPPS"                \
+	
+	#Gnome3 does not allow yet for font size change
+        #FALSE   ResizeFonts     "$GETOPT_MSG_RESIZEFONTS"               \
+
+	#Gnome3 does not allow themes... just for now?
+	#FALSE   Theme           "$GETOPT_MSG_THEME"                     \
 
 }
 

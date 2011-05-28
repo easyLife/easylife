@@ -20,6 +20,8 @@ RefreshPackagekitOff() {
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not disable refresh-packagekit plugin." && return 1
 
+	OkMsg "Refresh-packagekit yum plugin temporarily turned off"
+
 	return 0
 	
 }

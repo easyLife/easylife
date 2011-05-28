@@ -39,7 +39,7 @@ Flash() {
 
 		yum install -y alsa-plugins-pulseaudio
 
-		FLASHPKG='flashplayer_square_p2_64bit_linux_092710.tar.gz'
+		FLASHPKG='flashplayer10_2_p3_64bit_linux_111710.tar.gz'
 
 		cd ~
 		rm -rf "$FLASHPKG"

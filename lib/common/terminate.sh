@@ -15,7 +15,7 @@ Terminate() {
 	DisplayInfo "$GETOPT_MSG_TITLE" "250" "250" "$ENDMSG_MSG_TEXT"
 
 	# Kill background-running zenity notification icon
-	ZNI_PID=$(pgrep -f "zenity --notification --window-icon=/usr/share/pixmaps/easylife.png")
+	#ZNI_PID=$(pgrep -f "zenity --notification --window-icon=/usr/share/pixmaps/easylife.png")
 
 	[[ -n "$ZNI_PID" ]] && kill "$ZNI_PID"
 
