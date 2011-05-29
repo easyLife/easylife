@@ -24,8 +24,8 @@ RpmfusionOn() {
 	for i in 'free' 'nonfree'; do
 	
 		# Download stable or rawhide?
-		#VERSION='stable'
-		VERSION='rawhide'
+		VERSION='stable'
+		#VERSION='rawhide'
 
 		rpm -q rpmfusion-"$i"-release > /dev/null
 		if [[ "$?" != 0 ]]; then
