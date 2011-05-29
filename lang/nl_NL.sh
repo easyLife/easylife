@@ -15,6 +15,7 @@ GETOPT_MSG_CONF="Optie"
 GETOPT_MSG_DESC="Beschrijving"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_SUDOSETUP="Stelt de normale gebruiker in staat tijdelijk dezelfde rechten als root te verkrijgen. Vb.: sudo commando."
 GETOPT_MSG_DESKTOPLINK="Zorgt er voor dat het Bureaublad goed word doorgeschakelt (wegens compatibiliteit). Dit werkt alleen voor de pt_BR Fedora versies."
 GETOPT_MSG_SELINUXOFF="Over het algemeen veroorzaakt SE Linux aardig wat problemen. Het is mogelijk dit uit te schakelen zonder daarbij de veiligheid van het systeem op het spel te zetten."

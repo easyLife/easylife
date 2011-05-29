@@ -11,7 +11,7 @@ Ati() {
 	fi
 
 	# If anything from fglrx is installed, abort...
-	PKGSINSTALLED=$(rpm -qa *kmod-fglrx*)
+	PKGSINSTALLED=$(rpm -qa *kmod-catalyst*)
 	if [[ -n "$PKGSINSTALLED" ]]; then
 
 		OkMsg "ATI driver seems to be already installed." && return 0
@@ -21,22 +21,22 @@ Ati() {
 	yum install -y kernel-devel kernel-headers
 	yum update -y kernel kernel-devel kernel-headers
 	
-	yum install -y akmod-fglrx
+	yum install -y akmod-catalyst xorg-x11-drv-catalyst xorg-x11-drv-catalyst-libs.i686
 	if [[ "$?" == 0 ]]; then
 
 		OkMsg "ATI driver installed. Reboot your system." && return 0
 
 	else
 
-		ErrMsg "Could not install package akmod-fglrx" && return 1
+		ErrMsg "Could not install package akmod-catalyst" && return 1
 
 	fi
 
 	# backup initrd
-	mv /boot/initrd-$(uname -r).img /boot/initrd-$(uname -r).img.backup
+	#mv /boot/initrd-$(uname -r).img /boot/initrd-$(uname -r).img.backup
 
 	# remake initrd for the kernel (so the radeon module is not force loaded)
-	mkinitrd -v /boot/initrd-$(uname -r).img  $(uname -r)
+	#mkinitrd -v /boot/initrd-$(uname -r).img  $(uname -r)
 
 }
 

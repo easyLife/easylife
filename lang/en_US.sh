@@ -14,7 +14,7 @@ GETOPT_MSG_CONF="Item"
 GETOPT_MSG_DESC="Description"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
-GETOPT_MSG_ATI="Installs ATI propriatary video driver (for HD series and superiors)."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_CODECS="Installs codecs (MPEG-1, 2 and 4, WMV, Real Video and many others)."
 GETOPT_MSG_DESKTOPLINK="Creates a link called Desktop to the Área de Trabalho folder. Only good for pt_BR Fedora versions."
 GETOPT_MSG_DVDTOOLS="Installs K9copy and Devede (great DVD ripper - like dvdshrink - and DVD creator)"

@@ -18,6 +18,7 @@ GETOPT_MSG_CONF="Oggetto"
 GETOPT_MSG_DESC="Descrizione"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_SUDOSETUP="Permette al normale utente di lanciare comandi con privilegi di amministratore (root). Esempio: sudo COMANDO."
 GETOPT_MSG_DESKTOPLINK="Crea un collegamento chiamato Desktop alla cartella Área de Trabalho. Valido solo per la versione Portoghese di Fedora"
 GETOPT_MSG_SELINUXOFF="In generale, SELinux può causare qualche problema agli utenti Desktop. E' possibile disattivarlo senza compromettere la sicurezza."

@@ -15,6 +15,7 @@ GETOPT_MSG_CONF="Funkcja"
 GETOPT_MSG_DESC="Opis"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_SUDOSETUP="Zezwól zwykłemu użytkownikowi na uruchamianie programów z uprawnieniami roota NP.: sudo ."
 GETOPT_MSG_DESKTOPLINK="Utwórz link  -Desktop- do Área de Trabalho folder. Przydatne dla portugalskiej wersji Fedory."
 GETOPT_MSG_SELINUXOFF="Selinux może powodować pewne trudności przy codziennej pracy z komputerem, na szczęscie jest możliwe wyłączenie tej funkcjonalności.Opcja wyłącza SElinuxa"

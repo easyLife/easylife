@@ -14,6 +14,7 @@ GetOpt() {
         --column "$GETOPT_MSG_DESC"                                     \
         --window-icon="/usr/share/pixmaps/easylife.png"                 \
         FALSE   0AD             "$GETOPT_MSG_0AD"                       \
+        FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
         FALSE   Codecs          "$GETOPT_MSG_CODECS"                    \
         FALSE   DesktopLink     "$GETOPT_MSG_DESKTOPLINK"               \
         FALSE   DvdTools        "$GETOPT_MSG_DVDTOOLS"                  \

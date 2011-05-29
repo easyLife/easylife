@@ -14,6 +14,7 @@ GETOPT_MSG_CONF="项目"
 GETOPT_MSG_DESC="描述"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_SUDOSETUP="使普通用户以管理员（root）权限运行命令。例如: sudo 命令。"
 GETOPT_MSG_DESKTOPLINK="在桌面文件夹中创建一个称为“Desktop”的链接。仅适用于pt_BR语言的fedora版本。"
 GETOPT_MSG_SELINUXOFF="一般来说，SELinux会在桌面环境中引起麻烦。 在安全要求并不太严格的环境这是可以考虑关闭的。"

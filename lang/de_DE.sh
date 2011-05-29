@@ -16,6 +16,7 @@ GETOPT_MSG_CONF="Objekt"
 GETOPT_MSG_DESC="Beschreibung"
 
 GETOPT_MSG_0AD="Installs the 0 A.D. game from WildFire Games with the appropiate acceleration library."
+GETOPT_MSG_ATI="Installs ATI propriatary video driver (Only for HD series and superiors)."
 GETOPT_MSG_SUDOSETUP="Erlaubt es dem regulären Benutzer Kommandos mit root Rechten zu starten, z.B.: sudo command."
 GETOPT_MSG_DESKTOPLINK="Erstellt eine Verknüpfung Desktop zum Persönlichen Ordner."
 GETOPT_MSG_SELINUXOFF="Im Allgemeinen erzeugt SELinux einige Probleme in einer Desktop Umgebung. Es ist möglich, dies abzuschalten, ohne die Sicherheit zu beeinflussen."
