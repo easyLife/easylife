@@ -78,12 +78,12 @@ Java32() {
 
 		# Install Sun Java Plugin as an alternative of libjavaplugin and set it with the higest priority
 		alternatives --display libjavaplugin.so | grep \
-			-i /usr/lib/jvm/"$JAVALINKNAME"/plugin/i386/ns7/libjavaplugin_oji.so
+			-i /usr/lib/jvm/"$JAVALINKNAME"/lib/i386/libnpjp2.so
 		if [[ "$?" == 1 ]]; then
 	
 			/usr/sbin/alternatives --install				\
 			/usr/lib/mozilla/plugins/"$JAVAPLUGINNAME" "$JAVAPLUGINNAME"	\
-			/usr/lib/jvm/"$JAVALINKNAME"/plugin/i386/ns7/libjavaplugin_oji.so "$PRIORITY"
+			/usr/lib/jvm/"$JAVALINKNAME"/lib/i386/libnpjp2.so "$PRIORITY"
 				
 			/usr/sbin/alternatives --auto "$JAVAPLUGINNAME"
 		
