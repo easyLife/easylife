@@ -13,7 +13,6 @@ GetOpt() {
         --column "$GETOPT_MSG_CONF"                                     \
         --column "$GETOPT_MSG_DESC"                                     \
         --window-icon="/usr/share/pixmaps/easylife.png"                 \
-        FALSE   0AD             "$GETOPT_MSG_0AD"                       \
         FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
         FALSE   Codecs          "$GETOPT_MSG_CODECS"                    \
         FALSE   DesktopLink     "$GETOPT_MSG_DESKTOPLINK"               \
@@ -37,6 +36,8 @@ GetOpt() {
         FALSE   Utils           "$GETOPT_MSG_UTILS"                     \
         2> /dev/null)
 
+	# The repoos for 0AD game are not working...
+        #FALSE   0AD             "$GETOPT_MSG_0AD"                       \
 
 	##removed - Google now provides rpms directly with specific repos
         #FALSE   GoogleApps      "$GETOPT_MSG_GOOGLEAPPS"                \
