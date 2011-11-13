@@ -8,7 +8,7 @@ of easyLife features:
 + Sets "sudo" command up for your regular user;
 + Configures RPMFusion repository for extra and non-free software;
 + Installs Flash Player plugin;
-+ Installs all kinds of Codecs (h264,divx,xvid,mp3 etc);
++ Installs all kinds of Codecs (h264, divx, xvid, mp3 etc);
 + Installs nvidia and ati display drivers;
 + Installs Skype;
 + Installs Sun Java and Sun Java Plugin for Firefox;
