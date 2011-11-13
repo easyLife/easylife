@@ -39,7 +39,8 @@ SetupWindows() {
 	[[ "$?" == 0 ]] && OkMsg "Default folder viewer list set"
 
 
-	# Remove failed thumbnails so good ones can be generated			
+	# Remove failed thumbnails so good ones can be generated
+	# depends on the "codecs" option to be run			
 	rm -rf ~"$USERNAME"/.thumbnails/*
 
 	# A little off topic, but nice to have (theme lock screen and theme splash screen):

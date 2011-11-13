@@ -17,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="3.0"
+VERSION="3.1"
 LOGFILE="/var/log/easylife.log"
 
 

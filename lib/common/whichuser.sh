@@ -18,7 +18,7 @@ WhichUser() {
 	unset HOMES
 	while IFS=':' read user pass uid gid gecos home shell; do
 
-		if [[ "$uid" -gt 499 && "$uid" -lt 65534 ]]; then
+		if [[ "$uid" -gt 999 && "$uid" -lt 65534 ]]; then
 
 			USERS[$COUNT]="FALSE $user"
 			HOMES[$COUNT]="$home"
