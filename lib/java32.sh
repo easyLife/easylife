@@ -2,12 +2,12 @@ Java32() {
 
 	echo "[$FUNCNAME]"
 
-	JAVAPACKAGE=jre-6u29-linux-i586.bin
-	JAVALINKNAME=jre-1.6.0u29-sun-i586
+	JAVAPACKAGE=jre-7u4-linux-i586.tar.gz
+	JAVALINKNAME=jre-1.7.0u04-sun-i586
 	JAVAPLUGINNAME=libjavaplugin.so
-	JAVAUNPACKEDNAME=jre1.6.0_29
+	JAVAUNPACKEDNAME=jre1.7.0_04
 
-	JAVAINSTALLFOLDER=/opt/jre1.6.0_29_i586
+	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-i586
 	
 	PRIORITY=18000
 	IsX86_64 && PRIORITY=17000
@@ -20,10 +20,9 @@ Java32() {
 	fi
 
 	# Install dependencies
-	yum -y install compat-libstdc++-33 compat-libstdc++-296 wget expect system-switch-java
+	yum -y install compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install required packages" && return 1
-
 
 	cd ~
 	rm -rf "$JAVAPACKAGE"
@@ -31,21 +30,13 @@ Java32() {
 	Download noname "$JAVAPACKAGE"
 	
 	[[ $? != 0 ]] && ErrMsg "Could not download $JAVAPACKAGE" && return 1
-				
-	chmod +x "$JAVAPACKAGE"
-
-	# Run install program and use expect to automatically answer yes to the license reading and agreement
-	/usr/bin/expect -c \
-		"set timeout -1; spawn ./$JAVAPACKAGE; sleep 1; send -- q\r; sleep 1; send -- yes\r; expect eof"
-
-
-	# Move installation folder to /opt
-	mkdir -p /opt
 	
+	# unpack and mv to /opt with new name
+	mkdir -p /opt
+	tar zxvf "$JAVAPACKAGE"
 	mv "$JAVAUNPACKEDNAME" "$JAVAINSTALLFOLDER"
-
-				
-	# Remove package
+			
+	# Remove downloaded package
 	rm -rf "$JAVAPACKAGE"
 
 
@@ -60,8 +51,8 @@ Java32() {
 	# if [[ -f /selinux/enforce ]] && chcon -t unconfined_execmem_exec_t "$JAVAINSTALLFOLDER"/bin/java
 
 	# Remove previous alternative
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u25-sun-i586/bin/java &> /dev/null
-	/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u24-sun-i586/bin/java &> /dev/null
+	#/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u25-sun-i586/bin/java &> /dev/null
+	#/usr/sbin/alternatives --remove java /usr/lib/jvm/jre-1.6.0u24-sun-i586/bin/java &> /dev/null
 
 		  
 	# Install Sun Java as an alternative and set it with the higest priority
@@ -70,7 +61,9 @@ Java32() {
 
 	/usr/sbin/alternatives --auto java 
 				
-			
+	# Display installed version
+	java -version
+		
 	# Install firefox plugin
 
 	IsX86_64

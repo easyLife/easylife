@@ -1,14 +1,17 @@
 Download() {
 
+	# $PKGS comes from getdlurls.sh
 	[[ -z "${PKGS[*]}" ]] && return 1
 
 	for KEY in "${!PKGS[@]}"; do
 
-		[[ "${PKGS[KEY]}" == *"$2"* ]] && break;
+		# $2 is the package to be downloaded
+		[[ "${PKGS[KEY]}" == *"$2"* ]] && break
 
 	done
 
 	[[ -z "${URLS[*]}" ]] && return 1
+	[[ -z "${PKGS[KEY]}" ]] && return 1
 
 
 	if   [[ "$1" == "noname" ]]; then

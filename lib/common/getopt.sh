@@ -13,7 +13,6 @@ GetOpt() {
         --column "$GETOPT_MSG_CONF"                                     \
         --column "$GETOPT_MSG_DESC"                                     \
         --window-icon="/usr/share/pixmaps/easylife.png"                 \
-        FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
         FALSE   Codecs          "$GETOPT_MSG_CODECS"                    \
         FALSE   DesktopLink     "$GETOPT_MSG_DESKTOPLINK"               \
         FALSE   DvdTools        "$GETOPT_MSG_DVDTOOLS"                  \
@@ -47,6 +46,9 @@ GetOpt() {
 
 	#Gnome3 does not allow themes... just for now?
 	#FALSE   Theme           "$GETOPT_MSG_THEME"                     \
+
+	# Radeon open source driver seems to be just better
+	#FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
 
 }
 

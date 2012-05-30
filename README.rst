@@ -15,6 +15,6 @@ of easyLife features:
 + Integrates Sun Java with system-switch-java;
 + And many others...
 
-Author: Luis Felipe aka "duli"
+Author: Luis Felipe Marzagao aka "duli"
 
 Website: http://www.easylifeproject.org/

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #    easyLife - Automated software install and configuration for Fedora.
-#    Copyright (C) 2011  Luis Felipe B. Marzagão (duli)
+#    Copyright (C) 2012  Luis Felipe B. Marzagão (duli)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,16 +17,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="3.1"
+VERSION="3.2"
 LOGFILE="/var/log/easylife.log"
 
-
-echo -e "\neasyLife  Copyright (C) 2007-2011  Luis Felipe B. Marzagao (duli)"
+echo -e "\neasyLife  Copyright (C) 2007-2012  Luis Felipe Bretas Marzagao (Duli)"
 echo -e "Version: $VERSION"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
 echo -e "This is free software, and you are welcome to redistribute it"
 echo -e "under certain conditions; read the file LICENSE for details.\n"
-
+echo -e "IT IS RECOMMENDED TO UPDATE YOUR SYSTEM BEFORE RUNNING EASYLIFE.\n"
 
 # Discover easylife installation folder
 export RUNDIR=$(dirname "$0")
