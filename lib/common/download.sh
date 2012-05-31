@@ -11,7 +11,7 @@ Download() {
 	done
 
 	[[ -z "${URLS[*]}" ]] && return 1
-	[[ -z "${PKGS[KEY]}" ]] && return 1
+	[[ "${PKGS[KEY]}" != *"$2"* ]] && return 1
 
 
 	if   [[ "$1" == "noname" ]]; then
