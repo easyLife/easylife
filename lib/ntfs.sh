@@ -6,7 +6,7 @@ Ntfs() {
 
 	if [[ $? != 0 ]]; then
 
-		yum install -y ntfs-3g
+		yum install -y --disableplugin=refresh-packagekit ntfs-3g
 		
 		[[ $? != 0 ]] && ErrMsg "Could not install package" && return 1
 

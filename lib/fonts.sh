@@ -2,7 +2,8 @@ Fonts() {
 
 	echo "[$FUNCNAME]"
 
-	yum install -y wget aajohan-*fonts adf-*fonts aldusleaf-*fonts			\
+	yum install -y --disableplugin=refresh-packagekit wget                          \
+                            aajohan-*fonts adf-*fonts aldusleaf-*fonts			\
 			    allgeyer-*fonts apa-new-*fonts apanov-*fonts		\
 		            artwiz-*fonts beteckna-*fonts bitstream-*fonts		\
 			    bpg-*fonts dejavu-*fonts dustin-*fonts ecolier-*fonts	\
@@ -59,7 +60,7 @@ Fonts() {
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not download $FONTSPACKAGE" && return 1
 
-	yum localinstall --nogpgcheck -y "$FONTSPACKAGE"
+	yum localinstall --nogpgcheck -y --disableplugin=refresh-packagekit "$FONTSPACKAGE"
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install $FONTSPACKAGE" && return 1
 

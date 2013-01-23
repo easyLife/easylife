@@ -3,14 +3,15 @@ MediaPlayers() {
 	echo "[$FUNCNAME]"
 
 	# Install DVD stuff and firefox totem plugin viewer
-	yum install -y libdvdnav libdvdread totem-mozplugin
+	yum install -y --disableplugin=refresh-packagekit libdvdnav libdvdread totem-mozplugin
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install packages" && return 1
 
-	# Remove defective thumbnails formed before media support was installed
-	rm -rf "~$USERNAME/.thumbnails/*"
+	# Remove thumbnails formed before media support was installed
+	rm -rf "~$USERNAME/.cache/thumbnails/*"
 
-	yum install -y  mplayer mplayer-gui kplayer vlc avidemux-* banshee amarok	\
+	yum install -y  --disableplugin=refresh-packagekit                              \
+                        mplayer mplayer-gui kplayer vlc avidemux-* banshee amarok	\
 		       	xmms xmms-mp3 xmms-crossfade xmms-faad2 xmms-flac		\
 			xmms-pulse audio-convert-mod
 		       	

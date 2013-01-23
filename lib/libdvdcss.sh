@@ -7,7 +7,7 @@ Libdvdcss() {
 
 	else
 		
-		yum --enablerepo=atrpms install libdvdcss -y
+		yum install -y --enablerepo=atrpms --disableplugin=refresh-packagekit libdvdcss
 
 		[[ "$?" != 0 ]] && ErrMsg "Could not install package libdvdcss"
 

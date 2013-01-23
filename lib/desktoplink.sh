@@ -8,7 +8,6 @@ DesktopLink() {
 
 	if [[ -f "$USERHOME/.config/user-dirs.dirs" ]]; then
 
-
 		DESKFOLDER="$(cat $USERHOME/.config/user-dirs.dirs | grep -i XDG_DESKTOP_DIR)"
 		DESKFOLDER="${DESKFOLDER##*/}"
 		DESKFOLDER="${DESKFOLDER%\"}"

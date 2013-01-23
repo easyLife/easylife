@@ -13,7 +13,7 @@ Flash() {
 		[[ "$?" != 0 ]] && \
 			rpm -Uvh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 
-		yum install -y flash-plugin
+		yum install -y --disableplugin=refresh-packagekit flash-plugin
 	
 		if [[ "$?" == 0 ]]; then
 
@@ -31,7 +31,7 @@ Flash() {
 		[[ "$?" != 0 ]] && \
 			rpm -Uvh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
 
-		yum install -y nspluginwrapper alsa-plugins-pulseaudio flash-plugin
+		yum install -y --disableplugin=refresh-packagekit nspluginwrapper alsa-plugins-pulseaudio flash-plugin
 
 		if [[ "$?" == 0 ]]; then
 	
@@ -46,10 +46,10 @@ Flash() {
 	fi
 
 
-	if [[ -f /selinux/enforce ]]; then
+	#if [[ -f /selinux/enforce ]]; then
 			
-		restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
+	#	restorecon /usr/lib64/mozilla/plugins/libflashplayer.so
 			    
-	fi
+	#fi
 
 }

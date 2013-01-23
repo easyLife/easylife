@@ -2,10 +2,10 @@ Java32() {
 
 	echo "[$FUNCNAME]"
 
-	JAVAPACKAGE=jre-7u4-linux-i586.tar.gz
-	JAVALINKNAME=jre-1.7.0u04-sun-i586
+	JAVAPACKAGE=jre-7u11-linux-i586.tar.gz
+	JAVALINKNAME=jre-1.7.0u11-sun-i586
 	JAVAPLUGINNAME=libjavaplugin.so
-	JAVAUNPACKEDNAME=jre1.7.0_04
+	JAVAUNPACKEDNAME=jre1.7.0_11
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-i586
 	
@@ -20,7 +20,7 @@ Java32() {
 	fi
 
 	# Install dependencies
-	yum -y install compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
+	yum install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install required packages" && return 1
 

@@ -24,13 +24,14 @@ RpmfusionOn() {
 	for i in 'free' 'nonfree'; do
 	
 		# Download stable or rawhide?
-		VERSION='stable'
+		VERSION='18'
 		#VERSION='rawhide'
 
 		rpm -q rpmfusion-"$i"-release > /dev/null
 		if [[ "$?" != 0 ]]; then
 
-			rpm -Uvh http://download1.rpmfusion.org/"$i"/fedora/rpmfusion-"$i"-release-"$VERSION".noarch.rpm
+			yum install -y --nogpgcheck --disableplugin=refresh-packagekit    \
+                            http://download1.rpmfusion.org/"$i"/fedora/rpmfusion-"$i"-release-"$VERSION".noarch.rpm
 			if [[ "$?" != 0 ]]; then
 		
 				DisplayError "$GETOPT_MSG_TITLE" "$RPMFUSIONNEEDED_MSG_TXT"

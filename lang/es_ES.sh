@@ -38,7 +38,7 @@ GETOPT_MSG_SETUPWINDOWS="Pone las ventanas en modo explorador. Mas confort para 
 GETOPT_MSG_SKYPE="Instala Skype (llamadas telefonicas via internet)."
 GETOPT_MSG_SSLOCKOFF="Desbloquea el protector de pantalla."
 GETOPT_MSG_SUDOSETUP="Permite a su usuario regularo ejecutar comandos con privilegios de root. Ex.: sudo commando."
-GETOPT_MSG_THEME="Makes your desktop look nice (change icons and theme)."
+GETOPT_MSG_THEME="Installs icon themes."
 GETOPT_MSG_THUNDERBIRD="Instala Thunderbird como cliente de correo por defecto (POP3 , IMAP etc.)."
 GETOPT_MSG_UTILS="Instala algunos programas utiles (PDF virtual printer, unrar, 7zip, isomaster y otros mas)"
 

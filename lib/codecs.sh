@@ -2,10 +2,11 @@ Codecs() {
 
 	echo "[$FUNCNAME]"
 
-	yum install -y 	gstreamer gstreamer-plugins-base gstreamer-plugins-bad 				\
+	yum install -y --disableplugin=refresh-packagekit                                               \
+                        gstreamer gstreamer-plugins-base gstreamer-plugins-bad 				\
 			gstreamer-plugins-bad-free gstreamer-plugins-bad-free-extras			\
 			gstreamer-plugins-bad-nonfree gstreamer-plugins-base gstreamer-plugins-good	\
-			gstreamer-plugins-ugly gstreamer-ffmpeg libmad	libmatroska lsdvd		\
+			gstreamer-plugins-ugly gstreamer-ffmpeg libmad libmatroska lsdvd                \
 		       	xine-lib-extras xine-lib-extras-nonfree xine-lib-pulseaudio			\
 			xine-lib-extras-freeworld faad2 faac libdca					\
 		       	wget compat-libstdc++-33 compat-libstdc++-296
@@ -23,7 +24,7 @@ Codecs() {
 		[[ "$?" == 0 ]] && OkMsg "Codecs package is already installed" && return 0
 
 
-		CODECSPKG="mplayer-codecs-all-20071007-1.i386.rpm"
+		CODECSPKG="mplayer-codecs-all-20110131-1.i386.rpm"
 
 		cd ~
 		[[ -f "$CODECSPKG" ]] && rm -rf "$CODECSPKG"
@@ -32,7 +33,7 @@ Codecs() {
 
 		[[ "$?" != 0 ]] && ErrMsg "Could not download package $CODECSPKG" && return 1
 
-		yum localinstall --nogpgcheck -y "${PKGS[KEY]}"
+		yum localinstall --nogpgcheck -y --disableplugin=refresh-packagekit "${PKGS[KEY]}"
 
 		[[ "$?" != 0 ]] && ErrMsg "Could not install package ${PKGS[KEY]}" && return 1
 
@@ -40,8 +41,8 @@ Codecs() {
 
 	fi
 
-	# Remove possible defective thumbnails, so new ones can be sanely created
-	rm -rf ~"$USERNAME"/.thumbnails/*
+	# Remove thumbnails, so new ones can be sanely created
+	rm -rf ~"$USERNAME"/.cache/thumbnails/*
 
 	#Call libdvdcss function
 	Libdvdcss

@@ -5,10 +5,10 @@ Java64() {
 	IsX86_64
 	[[ "$?" != 0 ]] && ErrMsg "Not a x86_64 Operating System" && return 1
 
-	JAVAPACKAGE=jre-7u4-linux-x64.tar.gz
-	JAVALINKNAME=jre-1.7.0u04-sun-x64
+	JAVAPACKAGE=jre-7u11-linux-x64.tar.gz
+	JAVALINKNAME=jre-1.7.0u11-sun-x64
 	JAVAPLUGINNAME=libjavaplugin.so.x86_64
-	JAVAUNPACKEDNAME=jre1.7.0_04
+	JAVAUNPACKEDNAME=jre1.7.0_11
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-x64
 
@@ -23,7 +23,7 @@ Java64() {
 	fi
 
 	# Install dependencies
-	yum -y install compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
+	yum install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install required packages" && return 1
 
