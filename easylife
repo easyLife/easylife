@@ -25,7 +25,8 @@ echo -e "Version: $VERSION"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
 echo -e "This is free software, and you are welcome to redistribute it"
 echo -e "under certain conditions; read the file LICENSE for details.\n"
-echo -e "IT IS RECOMMENDED TO UPDATE YOUR SYSTEM BEFORE RUNNING EASYLIFE.\n"
+echo -e "\n"
+echo -e "PLEASE, UPDATE AND REBOOT YOUR SYSTEM BEFORE RUNNING EASYLIFE.\n"
 
 # Discover easylife installation folder
 export RUNDIR=$(dirname "$0")
