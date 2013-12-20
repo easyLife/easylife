@@ -4,11 +4,12 @@ GetOpt() {
 
     #Do not insert comments (#) before any line inside zenity
     SELECTION=$(                                                        \
-        zenity --list                                                   \
+        yad --list                                                      \
         --title "$GETOPT_MSG_TITLE"                                     \
         --width="$GETOPT_MSG_WIDTH" --height="$GETOPT_MSG_HEIGHT"       \
         --text "$GETOPT_MSG_TEXT"                                       \
         --checklist                                                     \
+        --print-column=2                                                \
         --column "$COMMON_MSG_CHECK"                                    \
         --column "$GETOPT_MSG_CONF"                                     \
         --column "$GETOPT_MSG_DESC"                                     \

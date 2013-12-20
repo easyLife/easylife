@@ -24,7 +24,7 @@ RpmfusionOn() {
 	for i in 'free' 'nonfree'; do
 	
 		# Download stable or rawhide?
-		VERSION='19'
+		VERSION='20'
 		#VERSION='rawhide'
 
 		rpm -q rpmfusion-"$i"-release > /dev/null
@@ -44,13 +44,10 @@ RpmfusionOn() {
 		else
 	
 			OkMsg "RPM Fusion $i already installed"
-			return 0
 
 		fi
 
-
 	done
-	
 
 	return 0
 

@@ -17,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="4.0"
+VERSION="4.1"
 LOGFILE="/var/log/easylife.log"
 
 echo -e "\neasyLife  Copyright (C) 2007-2013  Luis Felipe Bretas Marzagao (Duli)"
@@ -27,6 +27,7 @@ echo -e "This is free software, and you are welcome to redistribute it"
 echo -e "under certain conditions; read the file LICENSE for details.\n"
 echo -e "\n"
 echo -e "PLEASE, UPDATE AND REBOOT YOUR SYSTEM BEFORE RUNNING EASYLIFE.\n"
+echo -e "\n"
 
 # Discover easylife installation folder
 export RUNDIR=$(dirname "$0")
@@ -78,7 +79,7 @@ RpmfusionOn || Terminate
 
 FreshrpmsOff
 
-AtrpmsInstall
+#AtrpmsInstall
 
 pkill -SIGKILL -u root -o yum
 
@@ -86,10 +87,8 @@ pkill -SIGKILL -u root -o yum
 # Get setup/install options 
 GetOpt
 
-
-# Populate an array with selected functions from GetOpt (PS: substituting "|" with " ")
-FUNCTIONS=(${SELECTION//|/ })
-
+# Populate an array with selected functions from GetOpt (PS: substituting "|" with "")
+FUNCTIONS=(${SELECTION//|/})
 
 # Exit if no selection is made
 [[ -z "${FUNCTIONS[*]}" ]] && Terminate

@@ -8,6 +8,6 @@ K3b() {
 
 	#chmod ug+s /usr/bin/cdrdao /usr/bin/cdrecord -v
 
-	[[ $? != 0 ]] && ErrMsg "Could not set file attributes" && return 1
+	#[[ $? != 0 ]] && ErrMsg "Could not set file attributes" && return 1
 
 }

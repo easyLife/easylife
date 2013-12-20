@@ -5,15 +5,15 @@ Java64() {
 	IsX86_64
 	[[ "$?" != 0 ]] && ErrMsg "Not a x86_64 Operating System" && return 1
 
-	JAVAPACKAGE=jre-7u25-linux-x64.tar.gz
-	JAVALINKNAME=jre-1.7.0u25-sun-x64
+	JAVAPACKAGE=jre-7u45-linux-x64.tar.gz
+	JAVALINKNAME=jre-1.7.0u45-sun-x64
 	JAVAPLUGINNAME=libjavaplugin.so.x86_64
-	JAVAUNPACKEDNAME=jre1.7.0_25
+	JAVAUNPACKEDNAME=jre1.7.0_45
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-x64
 
-	PRIORITY=17000
-	IsX86_64 && PRIORITY=18000
+	PRIORITY=170000
+	IsX86_64 && PRIORITY=180000
 
 	if [[ -d $(readlink /usr/lib/jvm/"$JAVALINKNAME") ]]; then
 

@@ -17,9 +17,14 @@ Theme() {
 	
 	fi
 
-        sudo -u "$USERNAME" gsettings set \
-		org.gnome.desktop.interface icon-theme 'Faenza'
+        rpm -q faenza-icon-theme > /dev/null
+        if [[ "$?" == 0 ]]; then
 
-        [[ "$?" == 0 ]] && OkMsg "Theme installed"
+            sudo -u "$USERNAME" gsettings set \
+		    org.gnome.desktop.interface icon-theme 'Faenza'
+
+            [[ "$?" == 0 ]] && OkMsg "Themes installed"
+
+        fi
 
 }

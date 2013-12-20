@@ -7,7 +7,9 @@ Libdvdcss() {
 
 	else
 		
-		yum install -y --enablerepo=atrpms --disableplugin=refresh-packagekit libdvdcss
+		LivnaOn 
+		#yum install -y --enablerepo=atrpms --disableplugin=refresh-packagekit libdvdcss
+                yum install -y --enablerepo=livna --disableplugin=refresh-packagekit libdvdcss
 
 		[[ "$?" != 0 ]] && ErrMsg "Could not install package libdvdcss"
 
