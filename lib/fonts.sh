@@ -51,7 +51,7 @@ Fonts() {
 	[[ "$?" != 0 ]] && ErrMsg "Could not install wget" && return 1
 
 
-	FONTSPACKAGE="msttcore-fonts-2.0-5.noarch.rpm"
+	FONTSPACKAGE="msttcore-fonts-2.5-1.noarch.rpm"
 
 	cd ~
 	[[ -f "$FONTSPACKAGE" ]] && rm -rf "$FONTSPACKAGE"

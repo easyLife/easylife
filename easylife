@@ -17,10 +17,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="4.1"
+VERSION="4.2"
 LOGFILE="/var/log/easylife.log"
 
-echo -e "\neasyLife  Copyright (C) 2007-2013  Luis Felipe Bretas Marzagao (Duli)"
+echo -e "\neasyLife  Copyright (C) 2007-2014  Luis Felipe Bretas Marzagao (Duli)"
 echo -e "Version: $VERSION"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
 echo -e "This is free software, and you are welcome to redistribute it"

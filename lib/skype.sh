@@ -25,7 +25,7 @@ Skype() {
 
 	[[ "$?" != 0 ]] && ErrMsg "Package not installed" && return 1
 
-	SKYPEPACKAGE="skype-4.1.0.20-fedora.i586.rpm"
+	SKYPEPACKAGE="skype-4.3.0.37-fedora.i586.rpm"
 
 	cd ~
 	[[ -f "$SKYPEPACKAGE" ]] && rm -rf "$SKYPEPACKAGE"
