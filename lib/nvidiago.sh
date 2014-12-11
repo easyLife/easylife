@@ -35,8 +35,8 @@ NvidiaGo() {
 	yum update -y --disableplugin=refresh-packagekit kernel kernel-devel kernel-headers
 
 	# $NVIDIAPKG is pulled from either nvidia.sh or nvidia173xx.sh
-	yum install -y --disableplugin=refresh-packagekit "$NVIDIAPKG"
-	yum update -y --disableplugin=refresh-packagekit kmod-nvidia*
+	yum install -y --disableplugin=refresh-packagekit --nogpgcheck "$NVIDIAPKG"
+	yum update -y --disableplugin=refresh-packagekit --nogpgcheck kmod-nvidia*
 
 	rpm -q akmod-nvidia > /dev/null	
 	if [[ "$?" == 0 ]]; then
