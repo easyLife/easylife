@@ -9,12 +9,10 @@ GoogleRepo() {
 		
 		OkMsg "Google repo already installed"		
 		return 0
-
 	fi
 
 	IsX86_64
 	if [[ "$?" == 0 ]]; then
-
 cat << EOF > /etc/yum.repos.d/google.repo
 [google]
 name=Google - i386
@@ -37,9 +35,7 @@ enabled=0
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
-
 	else
-
 cat << EOF > /etc/yum.repos.d/google.repo
 [google]
 name=Google - i386
@@ -55,14 +51,10 @@ enabled=0
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
-
 	fi
 
-
 	if [[ "$?" != 0 ]]; then
-
-		ErrMsg "Could not create google repo file"
+        	ErrMsg "Could not create google repo file"
 		return 1
-
 	fi
 }

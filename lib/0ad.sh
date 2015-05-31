@@ -25,7 +25,7 @@ EOF
     fi
 
     # Install libraries and dependencies
-    yum install -y mesa-libGLw mesa-libGL mesa-libGLw-devel mesa-libGL-devel @fedora-packager
+    dnf install -y mesa-libGLw mesa-libGL mesa-libGLw-devel mesa-libGL-devel @fedora-packager
 
     # Check if the render acceleration library libtxc_dxtn is installed
     # http://wildfiregames.com/users/code/libtxc_dxtn070518.tar.gz
@@ -43,5 +43,5 @@ EOF
     fi
 
     # Install 0ad
-    yum install -y --enablerepo=fedora-0ad 0ad
+    dnf install -y --enablerepo=fedora-0ad 0ad
 }

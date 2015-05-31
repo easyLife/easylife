@@ -34,6 +34,7 @@ GETOPT_MSG_CODECS="Instala codecs (vídeos MPEG-1, 2 e 4, WMV, Real Video e muit
 GETOPT_MSG_MEDIAPLAYERS="Instala leitores de multimédia (Mplayer, Kplayer, Totem-Xine, Banshee, Xmms e outros, para vídeo e música)."
 GETOPT_MSG_NICEMENUS="Mostra menus agrupados de jogos, preferências, som, vídeo e segurança."
 GETOPT_MSG_NVIDIA="Instala o driver de vídeo proprietário da Nvidia (Versão atual)."
+GETOPT_MSG_NVIDIA304xx="Instala o driver de vídeo proprietário da Nvidia (Versão 3.40xx)."
 GETOPT_MSG_NVIDIA304xx="Instala o driver de vídeo proprietário da Nvidia (Versão 3.04xx)."
 GETOPT_MSG_NVIDIA173xx="Instala o driver de vídeo proprietário da Nvidia (Versão 1.73xx)."
 GETOPT_MSG_DVDTOOLS="Instala o K9copy e o Devede (excelente \"ripador\" de DVDs (como o dvdshrink) e Criador de DVD)."

@@ -24,7 +24,7 @@ AdobeReader() {
 
 	rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
 
-	yum install -y --disableplugin=refresh-packagekit "$ADOBEPKG" nspluginwrapper.i686
+	dnf install -y --disableplugin=refresh-packagekit "$ADOBEPKG" nspluginwrapper.i686
 	
 	[[ "$?" != 0 ]] && ErrMsg "Could not install package" && return 1
 

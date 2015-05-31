@@ -1,11 +1,10 @@
 Java32() {
-
 	echo "[$FUNCNAME]"
 
-	JAVAPACKAGE=jre-8u25-linux-i586.tar.gz
-	JAVALINKNAME=jre-1.8.0u25-sun-i586
+	JAVAPACKAGE=jre-8u45-linux-i586.tar.gz
+	JAVALINKNAME=jre-1.8.0u45-sun-i586
 	JAVAPLUGINNAME=libjavaplugin.so
-	JAVAUNPACKEDNAME=jre1.8.0_25
+	JAVAUNPACKEDNAME=jre1.8.0_45
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-i586
 	
@@ -13,14 +12,12 @@ Java32() {
 	IsX86_64 && PRIORITY=170000
 
 	if [[ -d $(readlink /usr/lib/jvm/"$JAVALINKNAME") ]]; then
-
 		OkMsg "$JAVALINKNAME seems to be installed on $(readlink /usr/lib/jvm/$JAVALINKNAME)"
 		return 0
-
 	fi
 
 	# Install dependencies
-	yum install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
+	dnf install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install required packages" && return 1
 
@@ -46,7 +43,6 @@ Java32() {
 	
 	/bin/ln -s "$JAVAINSTALLFOLDER" /usr/lib/jvm/"$JAVALINKNAME" > /dev/null
 
-
 	# Allow java in SELinux (Fedora 10 Beta)
 	# if [[ -f /selinux/enforce ]] && chcon -t unconfined_execmem_exec_t "$JAVAINSTALLFOLDER"/bin/java
 
@@ -68,20 +64,15 @@ Java32() {
 
 	IsX86_64
 	if [[ "$?" != 0 ]]; then
-
 		# Install Sun Java Plugin as an alternative of libjavaplugin and set it with the higest priority
 		alternatives --display libjavaplugin.so | grep \
 			-i /usr/lib/jvm/"$JAVALINKNAME"/lib/i386/libnpjp2.so
 		if [[ "$?" == 1 ]]; then
-	
 			/usr/sbin/alternatives --install				\
 			/usr/lib/mozilla/plugins/"$JAVAPLUGINNAME" "$JAVAPLUGINNAME"	\
 			/usr/lib/jvm/"$JAVALINKNAME"/lib/i386/libnpjp2.so "$PRIORITY"
 				
 			/usr/sbin/alternatives --auto "$JAVAPLUGINNAME"
-		
 		fi
-
 	fi
-
 }

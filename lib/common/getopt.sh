@@ -24,6 +24,7 @@ GetOpt() {
         FALSE   K3b             "$GETOPT_MSG_K3B"                       \
         FALSE   MediaPlayers    "$GETOPT_MSG_MEDIAPLAYERS"              \
         FALSE   Nvidia          "$GETOPT_MSG_NVIDIA"                    \
+        FALSE   Nvidia340xx     "$GETOPT_MSG_NVIDIA340xx"               \
         FALSE   Nvidia304xx     "$GETOPT_MSG_NVIDIA304xx"               \
         FALSE   SelinuxOff      "$GETOPT_MSG_SELINUXOFF"                \
         FALSE   SetupKeyboard   "$GETOPT_MSG_SETUPKEYBOARD"             \
@@ -45,15 +46,11 @@ GetOpt() {
 	#Gnome3 does not allow yet for font size change
         #FALSE   ResizeFonts     "$GETOPT_MSG_RESIZEFONTS"               \
 
-
-	
-
 	# Radeon open source driver seems to be just better
 	#FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
 
         # Nicemenus won´t be much of a help anymore with new gnome
         #FALSE   NiceMenus       "$GETOPT_MSG_NICEMENUS"                 \
-
 }
 
 

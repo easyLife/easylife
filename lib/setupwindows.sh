@@ -33,10 +33,10 @@ SetupWindows() {
 	#sudo -u "$USERNAME" "$DSBA" gconftool-2 -s -t \
 	#		string /apps/nautilus/preferences/default_folder_viewer "list_view"
 
-	sudo -u "$USERNAME" gsettings set \
-		org.gnome.nautilus.preferences default-folder-viewer "list-view"
+	#sudo -u "$USERNAME" gsettings set \
+	#	org.gnome.nautilus.preferences default-folder-viewer "list-view"
 
-	[[ "$?" == 0 ]] && OkMsg "Default folder viewer list set"
+	#[[ "$?" == 0 ]] && OkMsg "Default folder viewer list set"
 
 
 	# A little off topic, but nice to have (theme lock screen and theme splash screen):

@@ -10,12 +10,13 @@ SsLockOff() {
 	sudo -u "$USERNAME" gsettings set \
 		org.gnome.desktop.screensaver lock-enabled false
 
-	if [[ "$?" != 0 ]]; then
+        EV = "$?"
+	if [[ $EV != 0 ]]; then
 
 		ErrMsg "Could not turn screensaver lock off"
 		return 1
 
-	elif [[ "$?" = 0 ]]; then
+	elif [[ $EV == 0 ]]; then
 
 		OkMsg "Lock-enabled set"
 		return 0

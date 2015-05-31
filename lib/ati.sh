@@ -18,10 +18,10 @@ Ati() {
 
 	fi
 
-	yum install -y --disableplugin=refresh-packagekit kernel-devel kernel-headers
-	yum update -y --disableplugin=refresh-packagekit kernel kernel-devel kernel-headers
+	dnf install -y --disableplugin=refresh-packagekit kernel-devel kernel-headers
+	dnf update -y --disableplugin=refresh-packagekit kernel kernel-devel kernel-headers
 	
-	yum install -y --disableplugin=refresh-packagekit akmod-catalyst xorg-x11-drv-catalyst xorg-x11-drv-catalyst-libs.i686
+	dnf install -y --disableplugin=refresh-packagekit akmod-catalyst xorg-x11-drv-catalyst xorg-x11-drv-catalyst-libs.i686
 	if [[ "$?" == 0 ]]; then
 
 		OkMsg "ATI driver installed. Reboot your system." && return 0

@@ -20,7 +20,5 @@ Terminate() {
 	[[ -n "$ZNI_PID" ]] && kill "$ZNI_PID"
 
 	OkMsg "Terminating program..."	
-	
 	exit
-
 }

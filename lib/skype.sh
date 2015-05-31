@@ -16,9 +16,9 @@ Skype() {
 #	fi
 
 	# Install 32bit dependencies, since the rpm isn't x86_64
-	yum install -y --disableplugin=refresh-packagekit                               \
+	dnf install -y --disableplugin=refresh-packagekit                               \
                 libXScrnSaver.i?86 libX11.i?86 libv4l.i?86     			        \
-		alsa-plugins-pulseaudio.i?86 qt-x11.i?86 glibc*686 libXScrnSaver*686    \
+		alsa-plugins-pulseaudio.i?86 qt-x11.i?86 glibc.i686 libXScrnSaver.i686  \
 		libasound.so.2 libXv.so.1 libQtDBus.so.4 libQtGui.so.4 bzip2-libs       \
                 cairo-gobject cdparanoia-libs colord js lcms2 libXevie opus orc polkit  \
                 qt-mobility qtwebkit soundtouch
@@ -34,7 +34,7 @@ Skype() {
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not download $SKYPEPACKAGE" && return 1
 
-	yum localinstall -y --nogpgcheck --disableplugin=refresh-packagekit "$SKYPEPACKAGE"
+	dnf install -y --nogpgcheck --disableplugin=refresh-packagekit "$SKYPEPACKAGE"
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install $SKYPEPACKAGE" && return 1
 

@@ -2,7 +2,7 @@ Thunderbird() {
 
 	echo "[$FUNCNAME]"
 
-	yum install -y --disableplugin=refresh-packagekit thunderbird
+	dnf install -y --disableplugin=refresh-packagekit thunderbird
 
 	if [[ "$?" == 0 ]]; then
 

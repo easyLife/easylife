@@ -5,8 +5,8 @@ Theme() {
 	#IsGnome
 	#[[ "$?" != 0 ]] && ErrMsg "Not Gnome running" && return 1
 
-        yum install -y --disableplugin=refresh-packagekit                  \
-                       faenza-icon-theme elementary-icon-theme             \
+        dnf install -y --disableplugin=refresh-packagekit                  \
+                       elementary-icon-theme                               \
                        echo-icon-theme tango-icon-theme                    \
                        tango-icon-theme-extras
 

@@ -1,14 +1,13 @@
 Java64() {
-
 	echo "[$FUNCNAME]"
 
 	IsX86_64
 	[[ "$?" != 0 ]] && ErrMsg "Not a x86_64 Operating System" && return 1
 
-	JAVAPACKAGE=jre-8u25-linux-x64.tar.gz
-	JAVALINKNAME=jre-1.8.0u25-sun-x64
+	JAVAPACKAGE=jre-8u45-linux-x64.tar.gz
+	JAVALINKNAME=jre-1.8.0u45-sun-x64
 	JAVAPLUGINNAME=libjavaplugin.so.x86_64
-	JAVAUNPACKEDNAME=jre1.8.0_25
+	JAVAUNPACKEDNAME=jre1.8.0_45
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-x64
 
@@ -16,17 +15,14 @@ Java64() {
 	IsX86_64 && PRIORITY=180000
 
 	if [[ -d $(readlink /usr/lib/jvm/"$JAVALINKNAME") ]]; then
-
 		OkMsg "$JAVALINKNAME seems to be installed on $(readlink /usr/lib/jvm/$JAVALINKNAME)"
 		return 0
-
 	fi
 
 	# Install dependencies
-	yum install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
+	dnf install -y --disableplugin=refresh-packagekit compat-libstdc++-33 compat-libstdc++-296 wget system-switch-java
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install required packages" && return 1
-
 
 	cd ~
 	rm -rf "$JAVAPACKAGE"
@@ -50,7 +46,6 @@ Java64() {
 	
 	/bin/ln -s "$JAVAINSTALLFOLDER" /usr/lib/jvm/"$JAVALINKNAME" > /dev/null
 
-
 	# Allow java in SELinux (Fedora 10 Beta)
 	# if [[ -f /selinux/enforce ]] && chcon -t unconfined_execmem_exec_t "$JAVAINSTALLFOLDER"/bin/java
 	
@@ -70,24 +65,16 @@ Java64() {
 	# Install firefox plugin
 	IsX86_64
 	if [[ "$?" == 0 ]]; then
-
 		alternatives --display "$JAVAPLUGINNAME" | grep \
 			-i /usr/lib/jvm/"$JAVALINKNAME"/lib/amd64/libnpjp2.so
-	
 		if [[ "$?" == 1 ]]; then
-	
 			/usr/sbin/alternatives --install				\
 	       		/usr/lib64/mozilla/plugins/libjavaplugin.so "$JAVAPLUGINNAME"	\
 			/usr/lib/jvm/"$JAVALINKNAME"/lib/amd64/libnpjp2.so "$PRIORITY"
 				
 			/usr/sbin/alternatives --auto "$JAVAPLUGINNAME"
-		
 		fi
-
 		[[ -L /usr/lib64/mozilla/plugins/libjavaplugin.so ]] || ln -s 				\
 			/etc/alternatives/"$JAVAPLUGINNAME" /usr/lib64/mozilla/plugins/libjavaplugin.so
-
 	fi
-
-
 }

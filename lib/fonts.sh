@@ -1,16 +1,15 @@
 Fonts() {
-
 	echo "[$FUNCNAME]"
 
-	yum install -y --disableplugin=refresh-packagekit wget                          \
-                            aajohan-*fonts adf-*fonts aldusleaf-*fonts			\
-			    allgeyer-*fonts apa-new-*fonts apanov-*fonts		\
-		            artwiz-*fonts beteckna-*fonts bitstream-*fonts		\
-			    bpg-*fonts dejavu-*fonts dustin-*fonts ecolier-*fonts	\
-			    gargi-*fonts gdouros-*fonts gfs-*fonts gnu-free-*fonts	\
-                            google-droid-*fonts hartke-aurulent-*fonts mgopen-*fonts	\
-                            mona-*fonts oflb-*fonts yanone-*fonts ghostscript-fonts	\
-                            xorg-x11-fonts* liberation-*fonts
+	dnf install -y --disableplugin=refresh-packagekit wget          \
+                aajohan-*fonts adf-*fonts aldusleaf-*fonts		\
+		allgeyer-*fonts apa-new-*fonts apanov-*fonts		\
+		artwiz-*fonts beteckna-*fonts bitstream-*fonts		\
+		bpg-*fonts dejavu-*fonts dustin-*fonts ecolier-*fonts	\
+		gargi-*fonts gdouros-*fonts gfs-*fonts gnu-free-*fonts	\
+                google-droid-*fonts mgopen-*fonts                       \
+                mona-*fonts oflb-*fonts yanone-*fonts ghostscript-fonts	\
+                xorg-x11-fonts* liberation-*fonts
 		       
 	#rpm -q chkfontpath
 	#if [[ "$?" == 0 ]] ; then
@@ -31,7 +30,7 @@ Fonts() {
 	#
 	#	fi
 	#
-	#	yum localinstall --nogpgcheck -y "$CHKFONTPATH"
+	#	dnf install --nogpgcheck -y "$CHKFONTPATH"
 	#	if [[ "$?" != 0 ]] ; then
 	#
 	#		ErrMsg "Could not install package $CHKFONTPATH"
@@ -43,13 +42,11 @@ Fonts() {
 
 	#rm -rf "$CHKFONTPATH"
 
-
-	rpm -q msttcore-fonts
+	rpm -q msttcorefonts
 	[[ "$?" == 0 ]] && OkMsg "msttcorefonts already installed" && return 0
 
 	rpm -q wget
 	[[ "$?" != 0 ]] && ErrMsg "Could not install wget" && return 1
-
 
 	FONTSPACKAGE="msttcore-fonts-2.5-1.noarch.rpm"
 
@@ -60,10 +57,9 @@ Fonts() {
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not download $FONTSPACKAGE" && return 1
 
-	yum localinstall --nogpgcheck -y --disableplugin=refresh-packagekit "$FONTSPACKAGE"
+	dnf install --nogpgcheck -y --disableplugin=refresh-packagekit "$FONTSPACKAGE"
 
 	[[ "$?" != 0 ]] && ErrMsg "Could not install $FONTSPACKAGE" && return 1
 
 	rm -rf "$FONTSPACKAGE"
-
 }

@@ -28,6 +28,7 @@ GETOPT_MSG_RHGBOFF="Zet de grafische interface voor het opstarten uit. Dit kan p
 GETOPT_MSG_SSLOCKOFF="Er zal niet meer om een wachwoord worden gevraagt als de screensaver aan is gesprongen."
 GETOPT_MSG_FLASH="Installeert de Flash Player firefox plugin. Dit is een vereiste voor veel sites, waaronder Youtube."
 GETOPT_MSG_NVIDIA="Installs nVidia proprietary video driver (Current version)."
+GETOPT_MSG_NVIDIA340xx="Installs nVidia proprietary video driver (Version 3.40xx)."
 GETOPT_MSG_NVIDIA304xx="Installs nVidia proprietary video driver (Version 3.04xx)."
 GETOPT_MSG_NVIDIA173xx="Installs nVidia proprietary video driver (Version 1.73xx)."
 GETOPT_MSG_ATI="Installs ATI propriatary video driver (for HD series and superiors)."
