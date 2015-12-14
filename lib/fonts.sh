@@ -9,7 +9,7 @@ Fonts() {
 		gargi-*fonts gdouros-*fonts gfs-*fonts gnu-free-*fonts	\
                 google-droid-*fonts mgopen-*fonts                       \
                 mona-*fonts oflb-*fonts yanone-*fonts ghostscript-fonts	\
-                xorg-x11-fonts* liberation-*fonts
+                liberation-*fonts
 		       
 	#rpm -q chkfontpath
 	#if [[ "$?" == 0 ]] ; then

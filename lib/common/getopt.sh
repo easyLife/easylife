@@ -24,8 +24,8 @@ GetOpt() {
         FALSE   K3b             "$GETOPT_MSG_K3B"                       \
         FALSE   MediaPlayers    "$GETOPT_MSG_MEDIAPLAYERS"              \
         FALSE   Nvidia          "$GETOPT_MSG_NVIDIA"                    \
-        FALSE   Nvidia340xx     "$GETOPT_MSG_NVIDIA340xx"               \
         FALSE   Nvidia304xx     "$GETOPT_MSG_NVIDIA304xx"               \
+        FALSE   Nvidia340xx     "$GETOPT_MSG_NVIDIA340xx"               \
         FALSE   SelinuxOff      "$GETOPT_MSG_SELINUXOFF"                \
         FALSE   SetupKeyboard   "$GETOPT_MSG_SETUPKEYBOARD"             \
         FALSE   SetupWindows    "$GETOPT_MSG_SETUPWINDOWS"              \

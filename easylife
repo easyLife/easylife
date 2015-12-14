@@ -17,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Define some variables
-VERSION="4.3"
+VERSION="4.4"
 LOGFILE="/var/log/easylife.log"
 
 echo -e "\neasyLife  Copyright (C) 2007-2015  Luis Felipe Bretas Marzagao (Duli)"
