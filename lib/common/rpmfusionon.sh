@@ -17,7 +17,7 @@ RpmfusionOn() {
 
 	for i in 'free' 'nonfree'; do
 		# Download stable or rawhide?
-		VERSION='23'
+		VERSION='24'
 		#VERSION='rawhide'
 
 		rpm -q rpmfusion-"$i"-release > /dev/null

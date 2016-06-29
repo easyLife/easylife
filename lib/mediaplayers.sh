@@ -9,10 +9,8 @@ MediaPlayers() {
 	# Remove thumbnails formed before media support was installed
 	rm -rf "~$USERNAME/.cache/thumbnails/*"
 
-	dnf install -y  --disableplugin=refresh-packagekit                              \
-                        mplayer mplayer-gui kplayer vlc avidemux-* banshee amarok	\
-		       	xmms xmms-mp3 xmms-crossfade xmms-faad2 xmms-flac		\
-			xmms-pulse audio-convert-mod
+	dnf install -y  --disableplugin=refresh-packagekit   \
+        mplayer mplayer-gui vlc banshee amarok	         \
 		       	
 		       
 	[[ "$?" != 0 ]] && ErrMsg "Could not install packages" && return 1
