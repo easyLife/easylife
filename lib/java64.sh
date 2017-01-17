@@ -4,10 +4,10 @@ Java64() {
 	IsX86_64
 	[[ "$?" != 0 ]] && ErrMsg "Not a x86_64 Operating System" && return 1
 
-	JAVAPACKAGE=jre-8u91-linux-x64.tar.gz
-	JAVALINKNAME=jre-1.8.0u91-sun-x64
+	JAVAPACKAGE=jre-8u111-linux-x64.tar.gz
+	JAVALINKNAME=jre-1.8.0u111-sun-x64
 	JAVAPLUGINNAME=libjavaplugin.so.x86_64
-	JAVAUNPACKEDNAME=jre1.8.0_91
+	JAVAUNPACKEDNAME=jre1.8.0_111
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-x64
 
@@ -29,7 +29,7 @@ Java64() {
 	
 	Download noname "$JAVAPACKAGE"
 	
-	[[ $? != 0 ]] && ErrMsg "Could not download $JAVAPACKAGE" && return 1
+	[[ "$?" != 0 ]] && ErrMsg "Could not download $JAVAPACKAGE" && return 1
 	
 	# unpack and mv to /opt with new name
 	mkdir -p /opt

@@ -18,7 +18,7 @@ GetDlUrls() {
 
 	cd ~
 	rm -rf "$URLSFILE"
-	wget "http://easylifeproject.org/downloads/$URLSFILE"
+	wget "https://easylifeproject.org/downloads/$URLSFILE"
 	if [[ $? != 0 ]]; then
 	#	wget "http://www.dulinux.com-a.googlepages.com/$URLSFILE"
 	#	if [[ $? != 0 ]]; then

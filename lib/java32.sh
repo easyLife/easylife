@@ -1,10 +1,10 @@
 Java32() {
 	echo "[$FUNCNAME]"
 
-	JAVAPACKAGE=jre-8u91-linux-i586.tar.gz
-	JAVALINKNAME=jre-1.8.0u91-sun-i586
+	JAVAPACKAGE=jre-8u111-linux-i586.tar.gz
+	JAVALINKNAME=jre-1.8.0u111-sun-i586
 	JAVAPLUGINNAME=libjavaplugin.so
-	JAVAUNPACKEDNAME=jre1.8.0_91
+	JAVAUNPACKEDNAME=jre1.8.0_111
 
 	JAVAINSTALLFOLDER=/opt/"$JAVAUNPACKEDNAME"-i586
 	
@@ -26,7 +26,7 @@ Java32() {
 	
 	Download noname "$JAVAPACKAGE"
 	
-	[[ $? != 0 ]] && ErrMsg "Could not download $JAVAPACKAGE" && return 1
+	[[ "$?" != 0 ]] && ErrMsg "Could not download $JAVAPACKAGE" && return 1
 	
 	# unpack and mv to /opt with new name
 	mkdir -p /opt

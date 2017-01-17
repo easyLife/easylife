@@ -8,7 +8,7 @@ Theme() {
         dnf install -y --disableplugin=refresh-packagekit  \
             elementary-icon-theme numix-*                  \
             echo-icon-theme tango-icon-theme               \
-            tango-icon-theme-extras
+            tango-icon-theme-extras gnome-tweak-tool
 
         if [[ "$?" != 0 ]]; then
             ErrMsg "Could not install packages"
@@ -21,11 +21,17 @@ Theme() {
         if [[ "$?" == 0 ]]; then
             sudo -u "$USERNAME" gsettings set \
 		            org.gnome.desktop.interface icon-theme 'Numix-Circle'
+            if [[ "$?" == 0 ]]; then
+                OkMsg "Numix-Circle icon theme selected"
+            fi
         fi
 
-        rpm -q numix-gtk-theme > /dev/null
-        if [[ "$?" == 0 ]]; then
-            sudo -u "$USERNAME" gsettings set \
-                org.gnome.desktop.interface gtk-theme 'Numix'
-        fi
+        # This is causing too much Gtk-WARNING **: 
+        # Theme parsing error: gtk.css:4475:16: Expected a string.
+        #
+        #rpm -q numix-gtk-theme > /dev/null
+        #if [[ "$?" == 0 ]]; then
+        #    sudo -u "$USERNAME" gsettings set \
+        #        org.gnome.desktop.interface gtk-theme 'Numix'
+        #fi
 }

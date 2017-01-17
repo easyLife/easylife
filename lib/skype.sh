@@ -16,12 +16,12 @@ Skype() {
 #	fi
 
 	# Install 32bit dependencies, since the rpm isn't x86_64
-	dnf install -y --disableplugin=refresh-packagekit                           \
-    	libXScrnSaver.i?86 libX11.i?86 libv4l.i?86                              \
-		alsa-plugins-pulseaudio.i?86 qt-x11.i?86 glibc.i686 libXScrnSaver.i686  \
-		libasound.so.2 libXv.so.1 libQtDBus.so.4 libQtGui.so.4 bzip2-libs       \
-        cairo-gobject cdparanoia-libs colord js lcms2 libXevie opus orc polkit  \
-        qt-mobility qtwebkit soundtouch
+	# dnf install -y --disableplugin=refresh-packagekit                           \
+    #     libXScrnSaver.i?86 libX11.i?86 libv4l.i?86                              \
+	# 	  alsa-plugins-pulseaudio.i?86 qt-x11.i?86 glibc.i686 libXScrnSaver.i686  \
+	# 	  libasound.so.2 libXv.so.1 libQtDBus.so.4 libQtGui.so.4 bzip2-libs       \
+    #     cairo-gobject cdparanoia-libs colord js lcms2 libXevie opus orc polkit  \
+    #     qt-mobility qtwebkit soundtouch
 
 	[[ "$?" != 0 ]] && ErrMsg "Package not installed" && return 1
 

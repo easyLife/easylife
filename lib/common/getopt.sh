@@ -37,20 +37,30 @@ GetOpt() {
         FALSE   Utils           "$GETOPT_MSG_UTILS"                     \
         2> /dev/null)
 
-	# The repoos for 0AD game are not working...
+	    # The repoos for 0AD game are not working...
         #FALSE   0AD             "$GETOPT_MSG_0AD"                       \
 
-	##removed - Google now provides rpms directly with specific repos
+	    ##removed - Google now provides rpms directly with specific repos
         #FALSE   GoogleApps      "$GETOPT_MSG_GOOGLEAPPS"                \
 	
-	#Gnome3 does not allow yet for font size change
+	    #Gnome3 does not allow yet for font size change
         #FALSE   ResizeFonts     "$GETOPT_MSG_RESIZEFONTS"               \
 
-	# Radeon open source driver seems to be just better
-	#FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
+	   # Radeon open source driver seems to be just better
+	   #FALSE   Ati          	"$GETOPT_MSG_ATI"	                \
 
-        # Nicemenus won´t be much of a help anymore with new gnome
-        #FALSE   NiceMenus       "$GETOPT_MSG_NICEMENUS"                 \
+       # Nicemenus won´t be much of a help anymore with new gnome
+       #FALSE   NiceMenus       "$GETOPT_MSG_NICEMENUS"                 \
+       EXITVALUE="$?"
+       
+       # if [[ "$SELECTION" == '' ]]; then
+       #  return 1
+       # fi
+
+       if [[ "$EXITVALUE" == "1" ]]; then
+            NotXorg
+            Terminate
+       fi
 }
 
 
